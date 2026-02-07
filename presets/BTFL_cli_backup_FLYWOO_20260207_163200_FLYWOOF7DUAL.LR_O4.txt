@@ -1,0 +1,285 @@
+defaults nosave
+
+###WARNING: NO CUSTOM DEFAULTS FOUND###
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.4.3 Dec  7 2023 / 03:35:59 (738127e7e) MSP API: 1.45
+###ERROR IN diff: NO CONFIG FOUND###
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name FLYWOOF7DUAL
+manufacturer_id FLWO
+mcu_id 0024003a3233511633383534
+signature 
+
+# name: FLYWOO
+
+# resources
+resource BEEPER 1 C14
+resource MOTOR 1 B01
+resource MOTOR 2 B04
+resource MOTOR 3 B03
+resource MOTOR 4 A15
+resource MOTOR 5 C08
+resource MOTOR 6 C09
+resource MOTOR 7 B06
+resource MOTOR 8 B07
+resource LED_STRIP 1 A08
+resource SERIAL_TX 1 A09
+resource SERIAL_TX 2 A02
+resource SERIAL_TX 3 B10
+resource SERIAL_TX 4 A00
+resource SERIAL_TX 5 C12
+resource SERIAL_TX 6 C06
+resource SERIAL_RX 1 A10
+resource SERIAL_RX 2 A03
+resource SERIAL_RX 3 B11
+resource SERIAL_RX 4 A01
+resource SERIAL_RX 5 D02
+resource SERIAL_RX 6 C07
+resource I2C_SCL 1 B08
+resource I2C_SDA 1 B09
+resource LED 1 C15
+resource SPI_SCK 1 A05
+resource SPI_SCK 2 B13
+resource SPI_SCK 3 C10
+resource SPI_MISO 1 A06
+resource SPI_MISO 2 B14
+resource SPI_MISO 3 C11
+resource SPI_MOSI 1 A07
+resource SPI_MOSI 2 B15
+resource SPI_MOSI 3 B05
+resource ADC_BATT 1 C01
+resource ADC_RSSI 1 C02
+resource ADC_CURR 1 C00
+resource PINIO 1 B00
+resource FLASH_CS 1 C13
+resource OSD_CS 1 B12
+resource GYRO_EXTI 1 C03
+resource GYRO_EXTI 2 C04
+resource GYRO_CS 1 A04
+resource GYRO_CS 2 B02
+
+# timer
+timer C06 AF3
+# pin C06: TIM8 CH1 (AF3)
+timer B01 AF2
+# pin B01: TIM3 CH4 (AF2)
+timer B04 AF2
+# pin B04: TIM3 CH1 (AF2)
+timer B03 AF1
+# pin B03: TIM2 CH2 (AF1)
+timer A15 AF1
+# pin A15: TIM2 CH1 (AF1)
+timer C08 AF3
+# pin C08: TIM8 CH3 (AF3)
+timer C09 AF3
+# pin C09: TIM8 CH4 (AF3)
+timer A08 AF1
+# pin A08: TIM1 CH1 (AF1)
+timer B08 AF3
+# pin B08: TIM10 CH1 (AF3)
+timer B10 AF1
+# pin B10: TIM2 CH3 (AF1)
+timer A02 AF2
+# pin A02: TIM5 CH3 (AF2)
+timer A03 AF2
+# pin A03: TIM5 CH4 (AF2)
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+timer B07 AF2
+# pin B07: TIM4 CH2 (AF2)
+
+# dma
+dma ADC 3 0
+# ADC 3: DMA2 Stream 0 Channel 2
+dma pin C06 0
+# pin C06: DMA2 Stream 2 Channel 0
+dma pin B01 0
+# pin B01: DMA1 Stream 2 Channel 5
+dma pin B04 0
+# pin B04: DMA1 Stream 4 Channel 5
+dma pin B03 0
+# pin B03: DMA1 Stream 6 Channel 3
+dma pin A15 0
+# pin A15: DMA1 Stream 5 Channel 3
+dma pin C08 1
+# pin C08: DMA2 Stream 4 Channel 7
+dma pin C09 0
+# pin C09: DMA2 Stream 7 Channel 7
+dma pin A08 0
+# pin A08: DMA2 Stream 6 Channel 0
+dma pin B10 0
+# pin B10: DMA1 Stream 1 Channel 3
+dma pin A02 0
+# pin A02: DMA1 Stream 0 Channel 6
+dma pin A03 1
+# pin A03: DMA1 Stream 3 Channel 6
+dma pin B06 0
+# pin B06: DMA1 Stream 0 Channel 2
+dma pin B07 0
+# pin B07: DMA1 Stream 3 Channel 2
+
+# feature
+feature GPS
+feature TELEMETRY
+feature LED_STRIP
+feature OSD
+
+# serial
+serial 1 64 115200 57600 0 115200
+serial 2 131073 115200 57600 0 115200
+serial 4 2 115200 115200 0 115200
+
+# aux
+aux 0 0 0 1375 2100 0 0
+aux 1 1 1 1300 2100 0 0
+aux 2 46 5 1700 2100 0 0
+aux 3 13 4 1700 2100 0 0
+aux 4 35 2 1700 2100 0 0
+aux 5 36 3 1500 2100 0 0
+
+# rxfail
+rxfail 7 s 2000
+
+# master
+set dyn_notch_count = 1
+set dyn_notch_q = 500
+set acc_trim_pitch = -6
+set acc_calibration = 15,34,-10,1
+set mag_hardware = NONE
+set baro_i2c_device = 1
+set serialrx_provider = CRSF
+set adc_device = 3
+set blackbox_device = SPIFLASH
+set dshot_idle_value = 800
+set dshot_burst = ON
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set failsafe_procedure = GPS-RESCUE
+set vbat_min_cell_voltage = 280
+set vbat_warning_cell_voltage = 320
+set current_meter = ADC
+set battery_meter = ADC
+set ibata_scale = 170
+set beeper_inversion = ON
+set beeper_od = OFF
+set yaw_motors_reversed = ON
+set small_angle = 180
+set gps_sbas_mode = AUTO
+set gps_auto_baud = ON
+set gps_ublox_use_galileo = ON
+set gps_set_home_point_once = ON
+set gps_rescue_alt_mode = FIXED_ALT
+set gps_rescue_ascend_rate = 500
+set gps_rescue_return_alt = 67
+set gps_rescue_ground_speed = 2000
+set gps_rescue_max_angle = 32
+set gps_rescue_descent_dist = 200
+set gps_rescue_throttle_max = 1600
+set gps_rescue_throttle_hover = 1280
+set gps_rescue_min_sats = 6
+set pid_process_denom = 4
+set osd_units = IMPERIAL
+set osd_warn_bitmask = 65535
+set osd_rssi_dbm_alarm = -107
+set osd_alt_alarm = 390
+set osd_vbat_pos = 2561
+set osd_rssi_pos = 129
+set osd_link_quality_pos = 2616
+set osd_rssi_dbm_pos = 2648
+set osd_tim_1_pos = 2433
+set osd_tim_2_pos = 2401
+set osd_flymode_pos = 3088
+set osd_throttle_pos = 2369
+set osd_vtx_channel_pos = 161
+set osd_current_pos = 2625
+set osd_mah_drawn_pos = 2529
+set osd_craft_name_pos = 632
+set osd_gps_speed_pos = 2058
+set osd_gps_lon_pos = 3144
+set osd_gps_lat_pos = 3112
+set osd_gps_sats_pos = 3073
+set osd_home_dir_pos = 2106
+set osd_home_dist_pos = 2074
+set osd_flight_dist_pos = 2049
+set osd_altitude_pos = 18449
+set osd_warnings_pos = 2453
+set osd_avg_cell_voltage_pos = 2593
+set osd_disarmed_pos = 2295
+set osd_flip_arrow_pos = 2330
+set osd_core_temp_pos = 2497
+set osd_log_status_pos = 97
+set osd_efficiency_pos = 231
+set osd_stat_bitmask = 8797756
+set osd_displayport_device = MSP
+set vcd_video_system = HD
+set max7456_spi_bus = 2
+set pinio_box = 40,41,255,255
+set flash_spi_bus = 3
+set gyro_1_spibus = 1
+set gyro_1_sensor_align = CW270
+set gyro_1_align_yaw = 2700
+set gyro_2_spibus = 1
+set gyro_2_sensor_align = CW270
+set gyro_2_align_yaw = 2700
+set craft_name = FLYWOO
+
+profile 0
+
+# profile 0
+set crash_recovery = ON
+set p_pitch = 74
+set i_pitch = 120
+set d_pitch = 54
+set f_pitch = 137
+set p_roll = 71
+set i_roll = 114
+set d_roll = 50
+set f_roll = 132
+set p_yaw = 71
+set i_yaw = 114
+set f_yaw = 132
+set d_min_roll = 49
+set d_min_pitch = 53
+set simplified_master_multiplier = 110
+set simplified_i_gain = 90
+set simplified_d_gain = 150
+set simplified_pi_gain = 145
+set simplified_dmax_gain = 5
+set simplified_pitch_d_gain = 95
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 6
+set pitch_rc_rate = 6
+set yaw_rc_rate = 6
+set roll_srate = 63
+set pitch_srate = 63
+set yaw_srate = 63
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 3
+
+# save configuration
