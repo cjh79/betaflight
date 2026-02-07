@@ -35,3 +35,10 @@ set osd_stat_bitmask = 8797756
 set osd_displayport_device = MSP
 
 set crash_recovery = ON
+
+aux 0 0 0 1300 2100 0 0
+aux 1 1 1 1300 2100 0 0
+aux 2 46 5 1700 2100 0 0
+aux 3 13 4 1700 2100 0 0
+aux 4 35 3 1700 2100 0 0
+aux 5 36 2 1500 2100 0 0
